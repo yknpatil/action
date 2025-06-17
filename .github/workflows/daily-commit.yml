@@ -21,5 +21,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add daily_commit.txt
-          git commit -m "Daily automated commit"
+          git commit -m "Daily automated commit" || echo "No changes to commit"
+          # Update remote URL with GITHUB_TOKEN for authentication
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/yknpatil/action.git
           git push origin HEAD:main
