@@ -24,4 +24,3 @@ jobs:
           git commit -m "Daily automated commit" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${PAT_TOKEN}@github.com/yknpatil/action.git
           git push origin HEAD:main
-
